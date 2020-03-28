@@ -12,17 +12,19 @@ public class Persona {
 	boolean getVida() {
 		return conVida;
 	}
+	String getnombre() {
+		return nombre;
+	}
 	void cumplirAnios() {
 		edad += 1;
 	}
 	int getEdad() {
 		return edad;
 	}
-	void matarA(List<Persona> ciudad, Persona victima) {
-		if(ciudad.contains(victima)) {
+	void matarA(Ciudad ciudad, Persona victima) {
+		if((ciudad.getHabitantes()).contains(victima)) {
 			victima.conVida = false;
-			ciudad.remove(victima);
-			System.out.println(ciudad.size());
+			ciudad.sacarA(victima);
 		}else {
 			System.out.println("no encontró a la victima");
 		}
